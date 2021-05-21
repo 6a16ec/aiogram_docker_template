@@ -10,5 +10,6 @@ RUN apt install -y  python3.9-dev python3.9-venv
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python3.9 get-pip.py
 RUN rm get-pip.py
+RUN python3.9 -m venv venv
 COPY . ./
-CMD python3.9 /app/app.py
+CMD . venv/bin/activate && pip install -r requirements.txt && exec python main.py

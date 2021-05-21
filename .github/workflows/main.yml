@@ -31,7 +31,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pypecton:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/my_first_repo:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
